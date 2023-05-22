@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HASHIM KIKAMBI</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+        :root{
+            --bg-color:#1f242d;
+            --second-bg-color:#323946;
+            --text-color:#fff;
+            --main-color:#0ef;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+        body{
+            background: var(--bg-color);
+            color: var(--text-color);
+            overflow: hidden;
+        }
+        section {
+            min-height: 20vh;
+            padding: 10rem 9% 2rem;
+            overflow: hidden;
+        }
+        #about{
+            min-height: 50vh;
+            padding: 10rem 9% 2rem;
+            overflow: hidden;
+            background: var(--second-bg-color);
+        }
+        #cctv{
+            min-height: 20vh;
+            padding: 10rem 9% 2rem;
+            overflow: hidden;
+        }
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 9%;
+            background:var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .header.sticky{
+            border-bottom:  .1rem solid rgba(0, 0, 0, .2);
+        }
+        .logo{
+            cursor: default;
+        }
+        .navbar a{
+            font-size: 1.7rem;
+            color: var(--text-color);
+            margin-left: 4rem;
+            transition:  .3s;
+        }
+        .navbar a:hover,
+        .navbar a.active{
+            color: var(--main-color);
+        }
+        #menu-icon{
+            font-size: 3.6rem;
+            color: var(--text-color);
+            display: none;
+        }
+        .png{
+            height: auto;
+            width: 30px;
+        }
+        .png1{
+            height: 50px;
+            width: auto;
+        }
+        span{
+            text-shadow: 0 0 0.3rem var(--main-color);
+            color: var(--main-color);
+            font-size: 3.2rem;
+            font-weight: 750;
+        }
+        .new{
+border-radius: 40%;
+border-color: rgba(11, 144, 177, 0.911);
+border-style: solid;
+margin-top: 3%;
+width:300px ;
+height:auto ;
+}
+.btn{
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--main-color);
+            font-size: 1.6rem;
+            color: var(--second-bg-color);
+            letter-spacing: .1rem;
+            transition:  .5s ease;
+        }
+        .btn:hover{
+            box-shadow: none;
+        }
+        .first{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+        .aboutme-img img{
+            width: 35vw;
+            animation: floatImage 4s ease-in-out infinite;
+        }
+        @keyframes floatImage{
+            0%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(-2.5rem);
+            }
+            100%{
+                transform: translateY(0);
+            }
+        }
+        .heading{
+            text-align: center;
+            font-size: 4rem;
+        }
+        .space h2{
+            text-align: center;
+            line-height: 1.2;
+            margin-top: 30px;
+            margin-bottom: -50px;
+        }
+        .about-content h3, .services-box h3{
+            font-size: 2.6rem;
+        }
+        .about-content p, .services-box p{
+            font-size: 1.6rem;
+            margin: 2rem 0 3rem;
+        }
+        .services-box h4{
+            margin-bottom: 3rem;
+        }
+        .services-box{
+            flex: 1 1 30rem;
+            background: var(--second-bg-color);
+            padding: 3rem 2rem 4rem;
+            border-radius: 2rem;
+            text-align: center;
+            border: .2rem solid var(--bg-color);
+            transition:  .5s ease;
+        }
+        .services-box:hover{
+            border-color: var(--main-color);
+            transform: scale(1.02);
+        }
+        .nets{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .comp h5{
+            font-size: 2rem;
+        }
+        .langs, .des{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 5rem;
+        }
+        .lang{
+            height: auto;
+            width: 60px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+.cams{
+display: flex;
+justify-content: center;
+gap: 5rem;
+}
+.cam{
+    height: auto;
+    width: 200px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+.counter-up{
+min-height: 50hv;
+display: flex;
+align-items: center;
+padding: 0 50px;
+position: relative;
+        }
+        .counter-up::before{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+.counter-up .content{
+    position: relative;
+    z-index: 2;
+display: flex;
+width: 100%;
+height: 100%;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-between;
+}
+.content .box{
+width: calc(25% - 20px);
+border: 1px dashed rgba(255, 255, 255, 0.6);
+border-radius: 5px;
+padding: 20px;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+color: var(--text-color);
+flex-direction: column;
+}
+.content .box .icon{
+    font-size: 48px;
+    color: var(--text-color);
+}
+.content .box .counter{
+    font-size: 40px;
+    color: var(--text-color);
+    font-weight: 500;
+    font-family: sans-serif;
+}
+.content .box .text{
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 500;
+}
+.footer{
+            display: flex;
+flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 30vh;
+            padding: 2rem 7%;
+            background: var(--second-bg-color);
+        }
+        .footer p{
+            text-decoration: none;
+            color:var(--text-color);
+            font-size: 1.3rem;
+        }
+        footer .logo{
+            height: auto;
+             width: 70px;
+            cursor: pointer
+        }
+        footer i{
+padding: 5px;
+        }
+        .whites{
+            padding: 5px 0;
+        }
+        .whites .png{
+            margin-left: 5px;
+            margin-right: 5px;
+            height: 25px;
+            width: auto;
+        }
+        .footer-text p{
+            font-size: 1.3rem;
+        }
+        .footer-iconTop a{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: .8rem;
+            background: var(--main-color);
+            border-radius: .8rem;
+        }
+        .footer-iconTop a i{
+            font-size: 2.4rem;
+            color: var(--second-bg-color);
+        }
+        .footer-iconTop a i .png{
+            height: auto;
+            width: 20px;
+        }
+        .footer-conts{
+            padding: 5px;
+        }
+        .cont{
+            display: flex;
+            padding: 5px
+        }
+        .cont p{
+            margin-top: 8px;
+        }
+        .cont .png{
+            margin-right: 5px;
+            height: auto;
+            width: 25px;
+        }
+                /* BREAKPOINTS */
+@media (max-width: 1300px){
+    #about{
+            min-height: 40vh;
+            padding: 10rem 9% 2rem;
+            overflow: hidden;
+            background: var(--second-bg-color);
+        }
+}
+@media (max-width: 1036px){
+.counter-up{
+padding: 50px 50px 0 50px;
+}
+.content .box{
+width: calc(50% - 30px);
+margin-bottom: 50px;
+}
+}
+@media (max-width: 1000px){
+    .first{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .aboutme-img img{
+            width: 25vw;
+        }
+}
+@media (max-width: 768px){
+    #menu-icon{
+        display: block;
+    }
+    .lang{
+            height: auto;
+            width: 60px;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 50%;
+        border-radius: 50px 0 0 50px;
+        text-align: center;
+        padding: 1rem 3%;
+        backdrop-filter: blur(5px);
+      background: #1f242db4;
+        border-top:  .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+    .navbar.active{
+        display: block;
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 40%;
+    }
+}
+@media (max-width: 730px){
+    .nets, .cams{
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+gap: 3rem;
+        }
+    .langs{
+display: flex;
+justify-content: center;
+gap: 3rem;
+        }
+}
+@media (max-width: 580px){
+.content .box{
+width: 100%;
+}
+}
+@media (max-width: 460px){
+    .cam{
+    height: auto;
+    width: 100px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+    .footer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 40vh;
+            padding: 2rem 7%;
+            gap: 2rem;
+            background: var(--second-bg-color);
+        }
+        .cont{
+            display: flex;
+justify-content: center;
+            padding: 5px
+        }
+        .whites{
+            display: flex;
+justify-content: center;
+align-items: center;
+            padding: 5px 0;
+        }
+        .terms{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+text-align: center;
+gap: 4px;
+        }
+        .footer-text p{
+            text-align: center;
+        }
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><img src="KINGLOGO.png" style="width:auto; height:30px;"></a>
+
+        <i class="bx bx-menu" id="menu-icon"></i>
+
+
+        <nav class="navbar">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about" class="active">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#portfolio">Projects</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+<section class="about" id="about">
+    <div class="first">
+        <div class="aboutme-img">
+            <img src="new.jpg" class="new" alt="">
+        </div>
+        <div class="about-content">
+            <h1 class="heading">About <span>Me</span></h1>
+            <h3>Freelancer!</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                 Sapiente expedita neque voluptas temporibus perspiciatis 
+                 consectetur mollitia! Non expedita quia alias esse, ea atque
+                  magnam cupiditate, minus laboriosam perferendis, illum quibusdam!</p>
+                  <!-- <a href="about.html" class="btn">Read More</a> -->
+        </div>
+    </div>
+</section >
+    <center>
+        <div class="space">
+            <h2><span>SKILLS</span></h2>
+            <section class="network">   
+                <div class="services-box">
+               <i><img src="network.png" class="png"></i>
+               <h3>Networking Managment</h3>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Temporibus provident velit tenetur! Iusto, maxime? Modi 
+                    vitae officia neque fugit maiores.</p>
+                    <h4><span>vendors</span></h4>
+                    <div class="nets">
+                        <div class="comp">
+                            <i><img src="cisco.png" class="cam"></i>
+                        <h5>cisco associate</h5>
+                        </div>
+                        <div class="comp">
+                            <i><img src="mikrotik.png" class="cam"></i>
+                        <h5>mikrotik associate</h5>
+                        </div>
+                    </div>
+           </div>
+           </section>
+    <section class="webdev">
+        <div class="services-box">
+            <i><img src="code.png" class="png"></i>
+            <h3>Web Development</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Temporibus provident velit tenetur! Iusto, maxime? Modi 
+                 vitae officia neque fugit maiores.</p>
+                 <h4><span>languages</span></h4>
+<div class="langs">
+    <div class="comp">
+        <i><img src="html.png" class="lang"></i>
+        <h5>HTML</h5>
+    </div>
+    <div class="comp">
+        <i><img src="CSS.png" class="lang"></i>
+        <h5>CSS</h5>
+    </div>
+        <div class="comp">
+            <i><img src="JS.png" class="lang"></i>
+            <h5>JAVASCRIPT</h5>
+        </div>
+            <div class="comp">
+                <i><img src="react.png" class="lang"></i>
+                <h5>REACT JS</h5>
+</div>
+        </div>
+    </div>
+    </section>
+    <section class="graphic">
+        <div class="services-box">
+            <i><img src="design.png" class="png"></i>
+            <h3>Graphic Design</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Temporibus provident velit tenetur! Iusto, maxime? Modi 
+                 vitae officia neque fugit maiores.</p>
+                 <h4><span>tools</span></h4>
+                 <div class="des">
+                    <div class="comp">
+                        <i><img src="photoshop.png" class="lang"></i>
+                        <h5>PHOTOSHOP</h5>
+        </div>
+        <div class="comp">
+            <i><img src="illustrator.png" class="lang"></i>
+            <h5>ILLUSTRATOR</h5>
+</div>
+<div class="comp">
+    <i><img src="figma.png" class="lang"></i>
+    <h5>FIGMA</h5>
+</div>
+                 </div>
+        </div>
+    </section>
+    <section class="cctv" id="#cctv">
+        <div class="services-box" id="#cctv">
+            <i><img src="cctv.png" class="png"></i>
+            <h3>CCTV MANAGMENT</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Temporibus provident velit tenetur! Iusto, maxime? Modi 
+                 vitae officia neque fugit maiores.</p>
+                 <h4><span>activities</span></h4>
+                 <div class="cams">
+                    <div class="comp">
+                        <i><img src="instsall.png" class="cam"></i>
+                    <h5>cctv Installtion</h5>
+                    </div>
+                    <div class="comp">
+                        <i><img src="surveillance.png" class="cam"></i>
+                    <h5>cctv surveillance</h5>
+                    </div>
+                 </div>
+        </div>
+    </section>
+        </div>
+<section>
+    <div class="counter-up">
+        <div class="content">
+            <div class="box">
+                <div class="icon"><i><img src="white/tim.png" class="png1"></i></div>
+                <div class="counter">112</div>
+                <div class="text">Working Hours</div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i><img src="white/gif.png" class="png1"></i></div>
+                    <div class="counter">50</div>
+                    <div class="text">Completed Projects</div>
+                    </div>
+                    <div class="box">
+                        <div class="icon"><i><img src="white/pep.png" class="png1"></i></div>
+                        <div class="counter">46</div>
+                        <div class="text">Happy Clients</div>
+                        </div>
+                        <div class="box">
+                            <div class="icon"><i><img src="white/med.png" class="png1"></i></div>
+                            <div class="counter">35</div>
+                            <div class="text">Awards Received</div>
+                            </div>
+             </div>
+                    </div>
+</section>
+    
+    </center>
+    <!--footer design-->
+
+<footer class="footer">
+    <i><a href="index.html"><img src="KINGLOGO.png" class="logo"></a></i>
+    <div class="terms">
+        <h1>Support</h1>
+        <p>FAQ</p>
+        <a href="index.html#contact"><p>Feedback</p></a>
+        <a href="index.html#contact"><p>terms & policy</p></a>
+    </div>
+<div class="footer-conts">
+<div class="cont">
+    <img src="white/wcall.png" class="png">
+<p>+256 741273938</p>
+</div>
+<div class="cont">
+    <img src="white/wemai.png" class="png">
+<dfn><p>hashimkikambi7@gmail.com</p></dfn>
+</div>
+</div>
+<div class="footer-text"> 
+    <p>&copy; Copyright 2023 hashimkikambi.me | All Rights Reserved.</p>
+    <div class="whites">
+        <a href="https://www.facebook.com/kiks.bats/about_overview"><i><img src="white/wgit.png" class="png"></i></a>
+                <a href="https://twitter.com/Hashim_kikambi"><i><img src="white/wtwit.png" class="png"></i></a>
+                <a href="https://www.linkedin.com/in/hashim-kikambi-b68620237/"><i><img src="white/wlink.png" class="png"></i></a>
+                <a href="https://www.instagram.com/hashim_kikambi/"><i><img src="white/wins.png" class="png"></i></a>
+    </div>
+</div>
+    <div class="footer-iconTop">
+        <a href="#home"><i><img src="up.png" class="png"></i></a>
+    </div>
+</footer>
+<!--scroll reveal-->
+<script src="https://unpkg.com/scrollreveal"></script>
+    <!--custom js-->
+    <script src="JS.js"></script>
+    <script>
+$(document).ready(function(){
+$(".counter").counterUp({
+delay: 10,
+time: 1200
+});
+});
+    </script>
+</body>
+</html>
