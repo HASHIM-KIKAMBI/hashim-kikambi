@@ -44,27 +44,7 @@ ScrollReveal({
     delay: 200
 });
 
-ScrollReveal().reveal('.home-content, .heading', { origin: 'top'});
-ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom'});
-ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left'});
-ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right'});
-
-/*======typed js====*/
-// const text = document.querySelector(".dynamic-txt");
-// const textLoad = () => {
-//     setTimeout(() => {
-//         text.textcontent = "Network Engineer";
-//     }, 0);
-//     setTimeout(() => {
-//         text.textcontent = "Frontend Developer";
-//     }, 4000);
-//     setTimeout(() => {
-//         text.textcontent = "Graphic Designer";
-//     }, 8000);
-//     setTimeout(() => {
-//         text.textcontent = "Freelancer";
-//     }, 12000);
-// }
-
-// textLoad();
-// setInterval(textLoad, 24000);
+ScrollReveal().reveal('.home-content, .heading,.aboutme-img,.space h2', { origin: 'top'});
+ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form,.cam,.lang', { origin: 'bottom'});
+ScrollReveal().reveal('.home-content h1, .about-img,.network,.graphic', { origin: 'left'});
+ScrollReveal().reveal('.home-content p, .about-content,.webdev,.cctv', { origin: 'right'});
